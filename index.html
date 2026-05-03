@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Palestine - Eid Project</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="freepalestine.png" />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="freepalestine.png" alt="Free Palestine Logo" />
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="#hero">হোম</a></li>
+          <li><a href="#impact">প্রভাব</a></li>
+          <li><a href="#bkash">দান করুন</a></li>
+          <li>
+            <a href="https://wa.me/8801903158988" target="_blank">হোয়াটসঅ্যাপ</a>
+          </li>
+        </ul>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </nav>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <main>
+      <section class="hero" id="hero">
+        <img
+          src="photorealistic-kid-refugee-camp.jpg"
+          alt="Refugee child"
+          class="mobile-img"
+        />
+
+        <h1 class="hero-title">
+          <span class="black">আমার</span>
+          <span class="white">ঈদি</span>
+          <span class="green">কোথায়</span>
+          <span class="red">গেল</span> ❓
+        </h1>
+
+        <p>
+          তুমি বলো মানুষের জন্য ত্যাগ করবে — তাহলে শুরু করো তোমার ঈদির টাকা থেকে।
+        </p>
+      </section>
+
+      <!-- ================= BKASH ================= -->
+      <section class="bkash" id="bkash">
+        <h2>আপনার ঈদি পাঠান</h2>
+        <p class="note1">
+          নিচের নাম্বারে bKash এর মাধ্যমে আপনার সাহায্য পাঠাতে পারেন:
+        </p>
+
+        <div class="bkash-box">
+          <span id="bkash-number">01903158988</span>
+          <button onclick="copyNumber()">কপি</button>
+        </div>
+
+        <p class="note">শুধুমাত্র যারা আমাকে ব্যক্তিগতভাবে চেনেন তাদের জন্য।</p>
+      </section>
+
+      <!-- ================= IMPACT ================= -->
+      <section class="impact" id="impact">
+        <h2>আপনার ঈদি যা হতে পারে</h2>
+
+        <div class="cards">
+          <div class="card">🍞 পরিবারের জন্য খাবার</div>
+          <div class="card">🏥 চিকিৎসা সহায়তা</div>
+          <div class="card">🏠 আশ্রয় সহায়তা</div>
+          <div class="card">💧 বিশুদ্ধ পানি</div>
+        </div>
+      </section>
+
+      <!-- ================= MESSAGE ================= -->
+      <section class="message">
+        <h2>আমার কথা</h2>
+
+        <p>
+          এই পেজটি শুধুমাত্র তাদের জন্য যারা আমাকে ব্যক্তিগতভাবে চেনেন (মায়াজ)।  
+          উদ্দেশ্য খুব সহজ — ঈদের সব টাকা খরচ না করে, তার একটি ছোট অংশ আমরা তাদের জন্য ব্যয় করি যারা সত্যিই প্রয়োজনের মধ্যে আছে 😅
+          <br /><br />
+          আমি এখনো ঠিক করছি কীভাবে এবং কোন মাধ্যমে এই সাহায্য পৌঁছানো হবে।  
+          যদি কোনো কারণে পরিকল্পনা সফল না হয়, তবুও এই টাকা মসজিদ বা এতিমখানায় দান করা হবে।
+          <br /><br />
+          আমি সবকিছুতেই স্বচ্ছ থাকার চেষ্টা করবো, ইনশাআল্লাহ।
+        </p>
+
+        <!-- ================= COUNTER ================= -->
+        <div class="counter">
+          <h3>এ পর্যন্ত সংগ্রহ</h3>
+          <h1>৳50</h1>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <p>নিখুঁত না, কিন্তু আন্তরিক চেষ্টা।</p>
+    </footer>
+
+    <!-- ================= SCRIPT ================= -->
+    <script>
+      const menu = document.querySelector(".nav-links");
+      const toggle = document.querySelector(".menu-toggle");
+
+      function toggleMenu() {
+        menu.classList.toggle("active");
+      }
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.remove("active");
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+          menu.classList.remove("active");
+        }
+      });
+
+      function copyNumber() {
+        const number = document.getElementById("bkash-number").innerText;
+        navigator.clipboard.writeText(number);
+        alert("bKash নাম্বার কপি হয়েছে!");
+      }
+    </script>
+  </body>
+</html>
