@@ -272,3 +272,26 @@ footer {
   width: auto;
   display: block;
 }
+
+/* =======================
+   FOOTER CREDIT
+======================= */
+.footer-credit {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.footer-credit strong {
+  color: white;
+}
+
+.footer-credit a {
+  color: #e2136e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-credit a:hover {
+  text-decoration: underline;
+}
